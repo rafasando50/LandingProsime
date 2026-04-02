@@ -3,10 +3,10 @@ const currentYear = new Date().getFullYear();
 ---
 <footer class="footer">
 	<div class="footer-container">
-		<div class="footer-top grid">
+		<div class="footer-top grid-container">
 			<div class="footer-brand fade-in">
 				<div class="footer-logo">
-					<span class="logo-text">PROSIME</span><span class="logo-dot">.</span>
+					<img src="/logo/prosimelogo.png" alt="Prosime Industrial Logo" class="footer-brand-logo" />
 				</div>
 				<p class="brand-desc">
 					Líderes en ingeniería de presión y soluciones industriales certificadas ASME. Innovación técnica con seguridad garantizada.
@@ -38,14 +38,13 @@ const currentYear = new Date().getFullYear();
 				</ul>
 			</div>
 
-			<div class="footer-contact fade-in">
+			<div class="footer-links-group fade-in">
 				<h4 class="footer-title">Ubicación</h4>
 				<ul class="footer-links">
 					<li>
 						<p>Puebla, México. <br />San Francisco Ocotlán.</p>
 					</li>
 					<li>
-						<span class="muted">Contacto:</span>
 						<p>info@prosimeindustrial.com</p>
 					</li>
 				</ul>
@@ -65,10 +64,10 @@ const currentYear = new Date().getFullYear();
 
 <style>
 	.footer {
-		background: hsl(var(--bg-primary));
-		padding: 10rem 2rem 4rem;
+		background-color: #312783 !important; /* Brand Navy Background for grounding the page */
+		padding: 3rem 2rem 1.5rem; /* Even more compact as requested */
 		position: relative;
-		border-top: 1px solid hsla(var(--navy-primary), 0.1);
+		color: #ffffff !important;
 	}
 
 	.footer-container {
@@ -79,28 +78,27 @@ const currentYear = new Date().getFullYear();
 	.footer-top {
 		display: grid;
 		grid-template-columns: 1.5fr 1fr 1fr 1fr;
-		gap: 6rem;
-		margin-bottom: 8rem;
+		gap: 3rem; /* Tighter gap */
+		margin-bottom: 2.5rem; /* Much smaller margin */
 	}
 
 	.footer-logo {
-		font-family: 'Outfit', sans-serif;
-		font-size: 2rem;
-		font-weight: 800;
-		color: hsl(var(--navy-primary));
 		margin-bottom: 2rem;
-		letter-spacing: -0.04em;
 	}
 
-	.logo-dot {
-		color: hsl(var(--red-accent));
+	.footer-brand-logo {
+		height: 60px; /* Consistent with Navbar but slightly smaller for footer */
+		width: auto;
+		object-fit: contain;
+		filter: brightness(0) invert(1); /* Converting to white for the dark background */
 	}
 
 	.brand-desc {
-		color: hsl(var(--text-muted));
+		color: rgba(255, 255, 255, 0.7);
 		line-height: 1.7;
-		margin-bottom: 2rem;
-		max-width: 320px;
+		margin-bottom: 2.5rem;
+		max-width: 400px;
+		font-size: 1.05rem; /* Increased for better presence */
 	}
 
 	.social-row {
@@ -109,31 +107,31 @@ const currentYear = new Date().getFullYear();
 	}
 
 	.social-icon {
-		width: 40px;
-		height: 40px;
-		border: 1px solid hsla(var(--navy-primary), 0.1);
-		border-radius: 8px;
+		width: 42px;
+		height: 42px;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-radius: 4px; /* Squared to match buttons/contact box */
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		color: hsl(var(--navy-primary));
+		color: #ffffff;
 		transition: var(--transition);
 	}
 
 	.social-icon:hover {
-		color: hsl(var(--red-accent));
-		border-color: hsl(var(--red-accent));
-		background: hsla(var(--red-accent), 0.05);
+		color: hsl(var(--yellow-accent));
+		border-color: hsl(var(--yellow-accent));
+		background: rgba(250, 204, 21, 0.1);
 		transform: translateY(-4px);
 	}
 
 	.footer-title {
-		font-size: 0.75rem;
+		font-size: 1rem; /* Much clearer titles */
 		font-weight: 800;
 		text-transform: uppercase;
-		letter-spacing: 0.2rem;
-		color: hsl(var(--navy-primary));
-		margin-bottom: 2.5rem;
+		letter-spacing: 0.15rem;
+		color: hsl(var(--yellow-accent)); /* Yellow accent for headers */
+		margin-bottom: 1.5rem;
 	}
 
 	.footer-links {
@@ -147,15 +145,17 @@ const currentYear = new Date().getFullYear();
 	}
 
 	.footer-links a {
-		color: hsl(var(--text-muted));
-		font-size: 0.9375rem;
-		font-weight: 600;
+		color: rgba(255, 255, 255, 0.6);
+		font-size: 1.05rem;
+		font-weight: 700; /* Increased weight as requested */
 		transition: var(--transition);
+		text-decoration: none; /* No underline for consistency */
 	}
 
 	.footer-links a:hover {
-		color: hsl(var(--navy-primary));
-		padding-left: 4px;
+		color: #ffffff;
+		padding-left: 0; /* Removing the movement to keep it clean */
+		text-decoration: none;
 	}
 
 	.muted {
@@ -169,20 +169,20 @@ const currentYear = new Date().getFullYear();
 	}
 
 	.footer-links p {
-		color: hsl(var(--text-muted));
-		font-size: 0.9375rem;
+		color: rgba(255, 255, 255, 0.8);
+		font-size: 1.05rem; /* Matched to links for consistency */
 		margin: 0;
-		font-weight: 500;
+		font-weight: 700; /* Matched to links weight as requested for "letras" consistency */
 	}
 
 	.footer-bottom {
-		padding-top: 4rem;
-		border-top: 1px solid hsla(var(--navy-primary), 0.05);
+		padding-top: 2rem; /* More compact separation */
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		color: hsl(var(--text-muted) / 0.6);
-		font-size: 0.8125rem;
+		color: rgba(255, 255, 255, 0.4);
+		font-size: 0.85rem;
 	}
 
 	.footer-legal {

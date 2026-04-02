@@ -1,0 +1,178 @@
+---
+const services = [
+	{
+		title: "Recipientes ASME",
+		description: "Fabricación de tanques, acondicionadores de gas y filtros de separación certificados bajo los estándares más estrictos.",
+		icon: "01",
+		image: "/asme-vessel.png"
+	},
+	{
+		title: "Sistemas de Medición",
+		description: "Ingeniería de flujo precisa: transferencia de custodia con tecnología Coriolis y Ultrasonido de última generación.",
+		icon: "02",
+		image: "/hero-industrial.png"
+	},
+	{
+		title: "Skid Integration",
+		description: "Sistemas modulares llave en mano: separadores, deshidratadores y desaladores optimizados para eficiencia de campo.",
+		icon: "03",
+		image: "/hero-industrial.png"
+	},
+	{
+		title: "Válvulas y Control",
+		description: "Seguridad operativa total con sistemas Emergency Shut Down (ESD), actuadores y paneles electro-neumáticos.",
+		icon: "04",
+		image: "/asme-vessel.png"
+	}
+];
+---
+<section id="servicios" class="services">
+	<div class="services-container">
+		<div class="services-header fade-in">
+			<div class="section-label">Capacidades Técnicas</div>
+			<h2 class="section-title">Infraestructura <br /><span class="gradient-text">de Primer Nivel</span></h2>
+		</div>
+		
+		<div class="services-grid grid">
+			{services.map(service => (
+				<div class="service-card light-card">
+					<div class="service-image">
+						<img src={service.image} alt={service.title} loading="lazy" />
+					</div>
+					<div class="service-content">
+						<span class="service-number">{service.icon}</span>
+						<h3 class="service-title">{service.title}</h3>
+						<p class="service-desc">{service.description}</p>
+						<a href="#contacto" class="service-btn">
+							Más Información
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+						</a>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.services {
+		background: hsl(var(--bg-secondary));
+		padding: 10rem 2rem;
+	}
+
+	.services-container {
+		max-width: 1400px;
+		margin: 0 auto;
+	}
+
+	.services-header {
+		margin-bottom: 5rem;
+		text-align: left;
+	}
+
+	.section-label {
+		font-size: 0.75rem;
+		font-weight: 800;
+		text-transform: uppercase;
+		letter-spacing: 0.2rem;
+		color: hsl(var(--text-muted));
+		margin-bottom: 1rem;
+	}
+
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		gap: 2rem;
+	}
+
+	.service-card {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		overflow: hidden;
+		border-radius: 12px;
+		background: #ffffff;
+		box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); /* Sophisticated shadow for subtle separation */
+	}
+
+	.service-image {
+		height: 240px;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.service-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.6s ease;
+		opacity: 1; /* Full opacity for sharp look */
+		filter: none; /* No blur or grayscale */
+	}
+
+	.service-card:hover .service-image img {
+		transform: scale(1.1);
+	}
+
+
+	.service-content {
+		position: relative;
+		padding: 2.5rem;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		z-index: 2;
+	}
+
+	.service-number {
+		position: absolute;
+		top: 2.5rem;
+		right: 2.5rem;
+		font-family: 'Outfit', sans-serif;
+		font-size: 3rem;
+		font-weight: 800;
+		color: hsl(var(--navy-primary) / 0.05);
+		line-height: 1;
+	}
+
+	.service-title {
+		font-size: 1.5rem;
+		margin-bottom: 1.25rem;
+		color: hsl(var(--navy-primary));
+		letter-spacing: -0.02em;
+	}
+
+	.service-desc {
+		font-size: 1rem;
+		color: hsl(var(--text-muted));
+		margin-bottom: 2.5rem;
+		flex: 1;
+		line-height: 1.7;
+	}
+
+	.service-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 0.875rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: hsl(var(--navy-primary));
+		transition: var(--transition);
+		width: fit-content;
+		text-decoration: none; /* Removing underline */
+	}
+
+	.service-btn:hover {
+		color: hsl(var(--red-accent));
+		transform: translateX(5px);
+		text-decoration: none; /* Ensuring no underline on hover */
+	}
+
+	@media (max-width: 768px) {
+		.services-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

@@ -1,0 +1,248 @@
+---
+---
+<section id="contacto" class="contact">
+	<div class="contact-container">
+		<div class="contact-card light-card fade-in">
+			<div class="contact-grid">
+				<div class="contact-content">
+					<div class="section-label">Contacto Técnico</div>
+					<h2 class="section-title">Inicie su <br /><span class="gradient-text">Proyecto Certificado</span></h2>
+					<p class="contact-desc">
+						Transformamos sus requerimientos de ingeniería en soluciones tangibles de alto rendimiento bajo estándares ASME.
+					</p>
+					
+					<div class="contact-methods">
+						<div class="method-item">
+							<div class="method-icon">
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+							</div>
+							<div class="method-text">
+								<strong>Email Oficial</strong>
+								<a href="mailto:info@prosimeindustrial.com">info@prosimeindustrial.com</a>
+							</div>
+						</div>
+						
+						<div class="method-item">
+							<div class="method-icon">
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+							</div>
+							<div class="method-text">
+								<strong>Oficina Puebla</strong>
+								<span>San Francisco Ocotlán, México.</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="contact-form-side">
+					<form class="contact-form">
+						<div class="form-row grid">
+							<div class="input-group">
+								<input type="text" id="name" placeholder=" " required />
+								<label for="name">Nombre Completo</label>
+							</div>
+							<div class="input-group">
+								<input type="email" id="email" placeholder=" " required />
+								<label for="email">Empresa / Email</label>
+							</div>
+						</div>
+						<div class="input-group">
+							<input type="text" id="subject" placeholder=" " required />
+							<label for="subject">Asunto del Proyecto</label>
+						</div>
+						<div class="input-group">
+							<textarea id="message" placeholder=" " rows="4" required></textarea>
+							<label for="message">Detalles Técnicos</label>
+						</div>
+						<button type="submit" class="btn btn-primary form-submit">
+							Enviar Consulta
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.contact {
+		background: hsl(var(--bg-primary));
+		padding: 10rem 2rem;
+		position: relative;
+	}
+
+	.contact-container {
+		max-width: 1400px;
+		margin: 0 auto;
+	}
+
+	.contact-card {
+		padding: 2rem; /* Reduced to allow side boxes to shine */
+		border-radius: 0;
+		background: transparent; /* Making the outer card transparent to show the inner boxes */
+		box-shadow: none; /* Removing outer shadow as inner boxes now have them */
+	}
+
+	.contact-grid {
+		display: grid;
+		grid-template-columns: 0.8fr 1.2fr;
+		gap: 0; /* Removing the gap to join the boxes */
+		align-items: stretch; /* Ensuring equal height */
+		box-shadow: 0 30px 100px -10px rgba(10, 25, 47, 0.2); /* Single shadow for the joined block */
+	}
+
+	.section-label {
+		font-size: 0.75rem;
+		font-weight: 800;
+		text-transform: uppercase;
+		letter-spacing: 0.2rem;
+		color: hsl(var(--text-muted));
+		margin-bottom: 1rem;
+	}
+
+	.contact-content {
+		padding: 4rem;
+		background: #ffffff;
+		border: none;
+		border-radius: 0;
+		border-right: 1px solid hsla(var(--navy-primary), 0.05); /* Subtle internal divider */
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.contact-desc {
+		color: hsl(var(--text-muted));
+		font-size: 1.1rem;
+		margin-bottom: 3rem;
+		max-width: 100%;
+	}
+
+	.contact-methods {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.method-item {
+		display: flex;
+		gap: 1.5rem;
+		align-items: center;
+	}
+
+	.method-icon {
+		width: 48px;
+		height: 48px;
+		border-radius: 12px;
+		background: hsla(var(--navy-primary), 0.05);
+		color: hsl(var(--navy-primary));
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid hsla(var(--navy-primary), 0.1);
+	}
+
+	.method-text strong {
+		display: block;
+		font-size: 0.7rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1rem;
+		color: hsl(var(--text-muted));
+		margin-bottom: 4px;
+	}
+
+	.method-text a, .method-text span {
+		color: hsl(var(--navy-primary));
+		font-weight: 700;
+	}
+
+	.contact-form-side {
+		padding: 4rem;
+		background: #ffffff;
+		border: none;
+		border-radius: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.contact-form {
+		display: flex;
+		flex-direction: column;
+		gap: 2.5rem;
+	}
+
+	.form-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+	}
+
+	.input-group {
+		position: relative;
+	}
+
+	input, textarea {
+		width: 100%;
+		padding: 1.2rem 1.5rem;
+		background: #ffffff !important;
+		border: 1px solid hsla(var(--navy-primary), 0.1);
+		color: hsl(var(--navy-primary));
+		font-family: inherit;
+		font-size: 1rem;
+		transition: var(--transition);
+		border-radius: 4px;
+		box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18); /* Much deeper shadow as requested */
+	}
+
+	input:focus, textarea:focus {
+		outline: none;
+		border-color: #312783;
+		background: #ffffff !important;
+		box-shadow: 0 15px 45px -5px rgba(10, 25, 47, 0.35); /* Intense focus glow and lift */
+	}
+
+	label {
+		position: absolute;
+		top: 1rem;
+		left: 1.5rem; /* Aligned with input padding */
+		color: hsl(var(--text-muted));
+		font-size: 0.875rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		pointer-events: none;
+		transition: var(--transition);
+		font-weight: 600;
+	}
+
+	input:focus ~ label,
+	input:not(:placeholder-shown) ~ label,
+	textarea:focus ~ label,
+	textarea:not(:placeholder-shown) ~ label {
+		top: -1.7rem;
+		left: 0;
+		font-size: 0.75rem;
+		color: #312783;
+		font-weight: 800;
+	}
+
+	.form-submit {
+		margin-top: 1rem;
+		gap: 12px;
+		width: fit-content;
+	}
+
+	@media (max-width: 992px) {
+		.contact-grid {
+			grid-template-columns: 1fr;
+			gap: 4rem;
+		}
+		.contact-card {
+			padding: 2.5rem;
+		}
+		.form-row {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

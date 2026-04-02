@@ -1,0 +1,147 @@
+---
+---
+<nav id="main-nav">
+	<div class="nav-container">
+		<div class="logo">
+			<a href="#inicio">
+				<img src="/logo/prosimelogo.png" alt="Prosime Industrial Logo" class="brand-logo" />
+			</a>
+		</div>
+		<ul class="nav-links">
+			<li><a href="#inicio" class="nav-link">Inicio</a></li>
+			<li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+			<li><a href="#servicios" class="nav-link">Servicios</a></li>
+			<li><a href="#contacto" class="btn btn-primary nav-btn">Contacto</a></li>
+		</ul>
+		<button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
+			<span></span>
+			<span></span>
+		</button>
+	</div>
+</nav>
+
+<style>
+	nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1000;
+		padding: 1rem 0; /* Slightly increased for better visual balance */
+		transition: var(--transition);
+		background: hsl(var(--navy-primary));
+		border-bottom: 2px solid hsla(var(--yellow-accent), 0.3);
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+	}
+
+	nav.scrolled {
+		padding: 1.2rem 0;
+		background: hsl(var(--navy-medium));
+	}
+
+	.nav-container {
+		max-width: 1400px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 2rem;
+	}
+
+	.logo a {
+		display: flex;
+		align-items: center;
+	}
+
+	.brand-logo {
+		height: 70px; /* Increased for better visibility */
+		width: auto;
+		object-fit: contain;
+		transition: var(--transition);
+		margin: 5px 0; /* Adding the requested space above and below the logo */
+	}
+
+	nav.scrolled .brand-logo {
+		height: 55px; /* Proportionally larger on scroll too */
+	}
+
+	.logo-dot {
+		color: hsl(var(--yellow-accent));
+	}
+
+	.nav-links {
+		display: flex;
+		align-items: center;
+		gap: 3.5rem; /* Reduced to provide more focus */
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.nav-link {
+		position: relative;
+		font-size: 1.1rem; /* Increased font size */
+		font-weight: 700;
+		color: #ffffff;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		transition: var(--transition);
+		text-decoration: none; /* Explicitly removing browser default/global underline */
+	}
+
+	.nav-link:hover {
+		color: hsl(var(--yellow-accent));
+		text-decoration: none; /* Ensuring no underline on hover */
+	}
+
+	.nav-btn {
+		padding: 0.8rem 2rem;
+		font-size: 1rem; /* Balanced with new link size */
+		background-color: hsl(var(--yellow-accent)) !important;
+		color: #312783 !important; /* Brand Navy Blue for the text */
+		font-weight: 800; /* Extra bold as requested */
+		border-radius: 4px; /* Less rounded, more industrial/technical */
+		text-decoration: none;
+	}
+
+	.nav-btn:hover {
+		text-decoration: none;
+	}
+
+	.mobile-toggle {
+		display: none;
+		background: none;
+		border: none;
+		padding: 0.5rem;
+		cursor: pointer;
+		flex-direction: column;
+		gap: 6px;
+	}
+
+	.mobile-toggle span {
+		width: 28px;
+		height: 3px;
+		background: #ffffff;
+		transition: var(--transition);
+	}
+
+	@media (max-width: 768px) {
+		.nav-links {
+			display: none;
+		}
+		.mobile-toggle {
+			display: flex;
+		}
+	}
+</style>
+
+<script>
+	const nav = document.getElementById('main-nav');
+	window.addEventListener('scroll', () => {
+		if (window.scrollY > 20) {
+			nav?.classList.add('scrolled');
+		} else {
+			nav?.classList.remove('scrolled');
+		}
+	});
+</script>

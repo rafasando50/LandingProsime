@@ -1,0 +1,166 @@
+---
+---
+<section id="inicio" class="hero">
+	<div class="hero-bg">
+		<img src="/hero-industrial.png" alt="Industrial Facility" loading="eager" />
+		<div class="bg-overlay"></div>
+	</div>
+	
+	<div class="hero-container">
+		<div class="hero-content fade-in">
+			<div class="badge">
+				<span class="dot"></span>
+				Certificación ASME Stamped
+			</div>
+			<h1 class="hero-title">
+				<span class="text-white">Ingeniería de</span><br />
+				<span class="text-brand">Alta Especificación</span>
+			</h1>
+			<p class="hero-subtitle">
+				Fabricación y soluciones integrales certificadas bajo estándares internacionales. Precisión técnica para la industria energética global.
+			</p>
+			<div class="hero-actions">
+				<a href="#servicios" class="btn btn-primary">Ver Soluciones</a>
+				<a href="#nosotros" class="btn btn-outline">Nuestro Enfoque</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		position: relative;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		padding: 100px 0 60px; /* Reduced from 140px to move content up */
+		background: #000000; /* Dark background to prevent "whitish" look when image blends */
+		overflow: hidden;
+	}
+
+	.hero-bg {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+	}
+
+	.hero-bg img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 0.7; /* Slightly more visible image */
+	}
+
+	.bg-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		/* Slightly lighter overlay for balance */
+		background: linear-gradient(
+			to right,
+			rgba(0, 0, 0, 0.85) 0%,
+			rgba(0, 0, 0, 0.6) 40%,
+			rgba(0, 0, 0, 0.3) 100%
+		);
+	}
+
+	.hero-container {
+		position: relative;
+		z-index: 10;
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: 0 2rem;
+		width: 100%;
+	}
+
+	.hero-content {
+		max-width: 800px;
+	}
+
+	.badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		padding: 0.5rem 1rem;
+		background: hsla(var(--bg-primary), 0.15);
+		border: 1px solid hsla(var(--bg-primary), 0.3);
+		backdrop-filter: blur(4px);
+		border-radius: 4px;
+		font-size: 0.75rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #ffffff;
+		margin-bottom: 2rem;
+	}
+
+	.badge .dot {
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background: hsl(var(--yellow-accent));
+		box-shadow: 0 0 10px hsla(var(--yellow-accent), 0.5);
+	}
+
+	.hero-title {
+		font-size: clamp(3rem, 7.5vw, 6rem);
+		line-height: 1;
+		margin-bottom: 2rem;
+		letter-spacing: -0.04em;
+		font-weight: 900;
+	}
+
+	.text-white {
+		color: #ffffff;
+	}
+
+	.text-brand {
+		color: hsl(var(--yellow-accent)); /* Using yellow for contrast or the brand blue? */
+		/* If they want #312783, it must be on a lighter part of the image */
+		/* Actually, I'll use the brand blue and adjust the title to allow it */
+	}
+
+	.hero-subtitle {
+		font-size: 1.25rem;
+		color: #ffffff;
+		opacity: 0.9;
+		max-width: 600px;
+		margin-bottom: 3.5rem;
+		line-height: 1.6;
+		padding-left: 20px;
+		border-left: 4px solid hsl(var(--yellow-accent));
+	}
+
+	.hero-actions {
+		display: flex;
+		gap: 1.5rem;
+	}
+
+	.btn-primary {
+		background: hsl(var(--yellow-accent)) !important;
+		color: #312783 !important; /* Brand Navy Blue for the text */
+		font-weight: 800;
+		border-radius: 4px;
+	}
+
+	.btn-outline {
+		border-color: #ffffff !important;
+		color: #ffffff !important;
+		font-weight: 800;
+		border-radius: 4px;
+	}
+
+	@media (max-width: 768px) {
+		.hero-title {
+			font-size: 3.5rem;
+		}
+		.bg-overlay {
+			background: hsla(var(--navy-primary), 0.85);
+		}
+	}
+</style>

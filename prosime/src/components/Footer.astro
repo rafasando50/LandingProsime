@@ -1,0 +1,224 @@
+---
+const currentYear = new Date().getFullYear();
+---
+<footer class="footer">
+	<div class="footer-container">
+		<div class="footer-top grid">
+			<div class="footer-brand fade-in">
+				<div class="footer-logo">
+					<span class="logo-text">PROSIME</span><span class="logo-dot">.</span>
+				</div>
+				<p class="brand-desc">
+					Líderes en ingeniería de presión y soluciones industriales certificadas ASME. Innovación técnica con seguridad garantizada.
+				</p>
+				<div class="social-row">
+					<a href="#" class="social-icon" aria-label="LinkedIn">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+					</a>
+				</div>
+			</div>
+
+			<div class="footer-links-group fade-in">
+				<h4 class="footer-title">Navegación</h4>
+				<ul class="footer-links">
+					<li><a href="#inicio">Inicio</a></li>
+					<li><a href="#nosotros">Nosotros</a></li>
+					<li><a href="#servicios">Servicios</a></li>
+					<li><a href="#contacto">Contacto</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-links-group fade-in">
+				<h4 class="footer-title">Capacidades</h4>
+				<ul class="footer-links">
+					<li><a href="#servicios">Equipos ASME</a></li>
+					<li><a href="#servicios">Medición Industrial</a></li>
+					<li><a href="#servicios">Sistemas Integrados</a></li>
+					<li><a href="#servicios">Válvulas ESD</a></li>
+				</ul>
+			</div>
+
+			<div class="footer-contact fade-in">
+				<h4 class="footer-title">Ubicación</h4>
+				<ul class="footer-links">
+					<li>
+						<p>Puebla, México. <br />San Francisco Ocotlán.</p>
+					</li>
+					<li>
+						<span class="muted">Contacto:</span>
+						<p>info@prosimeindustrial.com</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<p>&copy; {currentYear} Prosime Industrial. Excelencia Certificada.</p>
+			<div class="footer-legal">
+				<a href="#">Privacidad</a>
+				<span class="sep">/</span>
+				<a href="#">Términos</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<style>
+	.footer {
+		background: hsl(var(--bg-primary));
+		padding: 10rem 2rem 4rem;
+		position: relative;
+		border-top: 1px solid hsla(var(--navy-primary), 0.1);
+	}
+
+	.footer-container {
+		max-width: 1400px;
+		margin: 0 auto;
+	}
+
+	.footer-top {
+		display: grid;
+		grid-template-columns: 1.5fr 1fr 1fr 1fr;
+		gap: 6rem;
+		margin-bottom: 8rem;
+	}
+
+	.footer-logo {
+		font-family: 'Outfit', sans-serif;
+		font-size: 2rem;
+		font-weight: 800;
+		color: hsl(var(--navy-primary));
+		margin-bottom: 2rem;
+		letter-spacing: -0.04em;
+	}
+
+	.logo-dot {
+		color: hsl(var(--red-accent));
+	}
+
+	.brand-desc {
+		color: hsl(var(--text-muted));
+		line-height: 1.7;
+		margin-bottom: 2rem;
+		max-width: 320px;
+	}
+
+	.social-row {
+		display: flex;
+		gap: 1.5rem;
+	}
+
+	.social-icon {
+		width: 40px;
+		height: 40px;
+		border: 1px solid hsla(var(--navy-primary), 0.1);
+		border-radius: 8px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: hsl(var(--navy-primary));
+		transition: var(--transition);
+	}
+
+	.social-icon:hover {
+		color: hsl(var(--red-accent));
+		border-color: hsl(var(--red-accent));
+		background: hsla(var(--red-accent), 0.05);
+		transform: translateY(-4px);
+	}
+
+	.footer-title {
+		font-size: 0.75rem;
+		font-weight: 800;
+		text-transform: uppercase;
+		letter-spacing: 0.2rem;
+		color: hsl(var(--navy-primary));
+		margin-bottom: 2.5rem;
+	}
+
+	.footer-links {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.footer-links li {
+		margin-bottom: 1.25rem;
+	}
+
+	.footer-links a {
+		color: hsl(var(--text-muted));
+		font-size: 0.9375rem;
+		font-weight: 600;
+		transition: var(--transition);
+	}
+
+	.footer-links a:hover {
+		color: hsl(var(--navy-primary));
+		padding-left: 4px;
+	}
+
+	.muted {
+		font-size: 0.7rem;
+		text-transform: uppercase;
+		display: block;
+		margin-bottom: 4px;
+		color: hsl(var(--text-muted) / 0.6);
+		letter-spacing: 0.05rem;
+		font-weight: 700;
+	}
+
+	.footer-links p {
+		color: hsl(var(--text-muted));
+		font-size: 0.9375rem;
+		margin: 0;
+		font-weight: 500;
+	}
+
+	.footer-bottom {
+		padding-top: 4rem;
+		border-top: 1px solid hsla(var(--navy-primary), 0.05);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: hsl(var(--text-muted) / 0.6);
+		font-size: 0.8125rem;
+	}
+
+	.footer-legal {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+	}
+
+	.footer-legal a {
+		color: inherit;
+		transition: var(--transition);
+	}
+
+	.footer-legal a:hover {
+		color: hsl(var(--navy-primary));
+	}
+
+	.sep {
+		opacity: 0.3;
+	}
+
+	@media (max-width: 992px) {
+		.footer-top {
+			grid-template-columns: 1fr 1fr;
+			gap: 4rem;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.footer-top {
+			grid-template-columns: 1fr;
+		}
+		.footer-bottom {
+			flex-direction: column;
+			gap: 2rem;
+			text-align: center;
+		}
+	}
+</style>

@@ -64,7 +64,7 @@ const currentYear = new Date().getFullYear();
 
 <style>
 	.footer {
-		background-color: #312783 !important; /* Brand Navy Background for grounding the page */
+		background-color: #251d62 !important; /* Brand Navy Background for grounding the page */
 		padding: 3rem 2rem 1.5rem; /* Even more compact as requested */
 		position: relative;
 		color: #ffffff !important;
@@ -221,4 +221,116 @@ const currentYear = new Date().getFullYear();
 			text-align: center;
 		}
 	}
+
+	@media (max-width: 425px) {
+		.footer-top {
+			width: 100%;
+			align-items: center;
+		}
+
+		.footer {
+			width: 102%;
+		}
+
+		.footer-title {
+			text-align: center;
+		}
+
+		.footer-links {
+			text-align: center;
+			margin-bottom: -20px;
+		}
+
+		.footer-brand-logo {
+			margin-left: 25%;
+		}
+
+		.brand-desc {
+			text-align: center;
+			margin-left: 5%;
+		}
+
+		.footer-brand {
+			width: 104%;
+		}
+
+		.social-icon {
+			margin-left: 44%;
+		}
+	}
+
+	@media (max-width: 375px) {
+		.footer-top {
+			width: 100%;
+			align-items: center;
+		}
+		.footer {
+			width: 138%;
+		}
+
+		.footer-title {
+			text-align: center;
+		}
+
+		.footer-links {
+			text-align: center;
+			margin-bottom: -20px;
+		}
+
+		.footer-brand-logo {
+			margin-left: 30%;
+		}
+
+		.brand-desc {
+			text-align: center;
+			margin-left: 14%;
+		}
+
+		.footer-brand {
+			width: 104%;
+		}
+
+		.social-icon {
+			margin-left: 45%;
+		}
+	}
+
+	@media (max-width: 320px) {
+
+		.footer-top {
+			width: 100%;
+		}
+		.footer {
+			width: 140%;
+			background-color: green;
+		}
+
+		.footer-title {
+			text-align: center;
+		}
+
+		.footer-links {
+			width: 103%;
+			text-align: center;
+		}
+
+		.footer-brand-logo {
+			margin-left: 21%;
+		}
+
+		.brand-desc {
+			text-align: center;
+			margin-left: 5%;
+			font-weight: 500;
+		}
+
+		.footer-brand {
+			width: 100%;
+		}
+
+		.social-icon {
+			margin-left: 47%;
+		}
+
+	}	
 </style>

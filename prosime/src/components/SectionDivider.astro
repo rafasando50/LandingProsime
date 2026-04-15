@@ -1,0 +1,143 @@
+---
+const keywords = [
+	"Proyectos EPC",
+	"Ingeniería de Precisión",
+	"Seguridad Industrial",
+	"Valvulería Industrial",
+	"Skids de Medición",
+	"Industria Energética",
+	"Gestión de Integridad",
+	"Sistemas Modularizados",
+    "Innovación Constante",
+    "Excelencia Técnica"
+];
+---
+
+<div class="divider-strip">
+	<div class="marquee">
+		<div class="marquee-content">
+			{keywords.map((word) => (
+				<span class="marquee-item">
+					<span class="dot"></span>
+					{word}
+				</span>
+			))}
+            {/* Duplicamos para el loop infinito suave */}
+            {keywords.map((word) => (
+				<span class="marquee-item">
+					<span class="dot"></span>
+					{word}
+				</span>
+			))}
+		</div>
+	</div>
+</div>
+
+<style>
+	.divider-strip {
+		background: hsl(var(--navy-primary));
+		height: 80px;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+		position: relative;
+		border-top: 1px solid rgba(255,255,255,0.1);
+		border-bottom: 1px solid rgba(255,255,255,0.1);
+	}
+
+	.marquee {
+		display: flex;
+		overflow: hidden;
+		user-select: none;
+		gap: 2rem;
+	}
+
+	.marquee-content {
+		flex-shrink: 0;
+		display: flex;
+		justify-content: space-around;
+		gap: 3rem;
+		min-width: 100%;
+		animation: scroll 40s linear infinite;
+	}
+
+	.marquee-item {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+		color: #ffffff;
+		font-family: 'Outfit', sans-serif;
+		font-size: 1.1rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.15rem;
+		white-space: nowrap;
+	}
+
+	.dot {
+		width: 6px;
+		height: 6px;
+		background: hsl(var(--yellow-accent));
+		border-radius: 50%;
+	}
+
+	@keyframes scroll {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-50%);
+		}
+	}
+
+	/* Micro-textura industrial de fondo */
+	.divider-strip::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.05;
+		background-image: radial-gradient(#ffffff 1px, transparent 1px);
+		background-size: 20px 20px;
+		pointer-events: none;
+	}
+
+	@media (max-width: 768px) {
+		.divider-strip {
+			height: 80px;
+		}
+		.marquee-item {
+			font-size: 0.85rem;
+			gap: 1rem;
+		}
+		.marquee-content {
+			gap: 2rem;
+		}
+	}
+	
+	@media (max-width: 425px) {
+		.divider-strip {
+			width: 502px;
+			margin-left: 0%;
+			height: 95px;
+		}
+	}
+
+	@media (max-width: 375px) {
+		.divider-strip {
+			width: 585px;
+			margin-left: 0%;
+			height: 90px;
+		}
+	}
+
+	@media (max-width: 320px) {
+		.divider-strip {
+			width: 540px;
+			margin-left: 0%;
+			height: 80px;
+		}
+	}
+</style>

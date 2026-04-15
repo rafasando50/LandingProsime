@@ -1,0 +1,185 @@
+---
+const values = [
+	{
+		title: "Excelencia Técnica",
+		description: "Ingeniería de alta precisión respaldada por capacitación constante",
+		icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="15" x2="23" y2="15"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="15" x2="4" y2="15"></line></svg>`
+	},
+	{
+		title: "Gestión Integral",
+		description: "Calidad, seguridad y cuidado ambiental bajo estándares ISO.",
+		icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>`
+	},
+	{
+		title: "Capacidad Operativa",
+		description: "Infraestructura propia y logística pesada para una respuesta inmediata.",
+		icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>`
+	},
+	{
+		title: "Confianza Operativa",
+		description: "Soluciones diseñadas para garantizar la seguridad en el control de fluidos.",
+		icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>`
+	},
+	{
+		title: "Responsabilidad Social",
+		description: "Compromiso ético con el entorno y el desarrollo sostenible.",
+		icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>`
+	},
+	{
+		title: "Enfoque al Cliente",
+		description: "Acompañamiento experto en todas las fases del proyecto.",
+		icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`
+	}
+];
+---
+
+<section id="valores" class="values">
+	<div class="values-container">
+		<div class="values-header fade-in">
+			<h2 class="section-title">Nuestros <span class="gradient-text">Valores</span></h2>
+			<p class="values-subtitle">Cimientos que impulsan nuestra excelencia operativa y compromiso con la industria.</p>
+		</div>
+
+		<div class="values-grid">
+			{values.map(value => (
+				<div class="value-card light-card fade-in">
+					<div class="icon-wrapper" set:html={value.icon} />
+					<h3 class="value-title">{value.title}</h3>
+					<p class="value-desc">{value.description}</p>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.values {
+		padding: 6rem 2rem;
+		background: hsl(var(--bg-primary));
+		position: relative;
+		overflow: hidden;
+	}
+
+	.values-container {
+		max-width: 1400px;
+		margin: 0 auto;
+	}
+
+	.values-header {
+		text-align: center;
+		margin-bottom: 5rem;
+		max-width: 700px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.values-subtitle {
+		color: hsl(var(--text-muted));
+		font-size: 1.1rem;
+		margin-top: 1.5rem;
+		margin-bottom: -50px;
+	}
+
+	.values-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+	}
+
+	@media (max-width: 1024px) {
+		.values-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.values-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.value-card {
+		padding: 3rem 2.5rem;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		transition: var(--transition);
+	}
+
+	.value-card:hover {
+		transform: translateY(-10px);
+	}
+
+	.icon-wrapper {
+		width: 64px;
+		height: 64px;
+		margin-bottom: 2rem;
+		color: hsl(var(--navy-primary));
+		background: hsla(var(--navy-primary), 0.05);
+		padding: 1.25rem;
+		border-radius: 16px;
+		transition: var(--transition);
+	}
+
+	.value-card:hover .icon-wrapper {
+		background: hsl(var(--navy-primary));
+		color: #ffffff;
+		transform: rotateY(180deg);
+	}
+
+	.icon-wrapper :global(svg) {
+		width: 100%;
+		height: 100%;
+	}
+
+	.value-title {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: hsl(var(--navy-primary));
+	}
+
+	.value-desc {
+		font-size: 1rem;
+		color: hsl(var(--text-muted));
+		line-height: 1.7;
+		margin: 0;
+	}
+
+	@media (max-width: 1024px) {
+		.values {
+			padding: 6rem 1.5rem;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.values-header {
+			margin-bottom: 3rem;
+		}
+		
+		.value-card {
+			padding: 2.5rem 2rem;
+		}
+	}
+	
+	@media (max-width: 425px) {
+		.values {
+			width: 350px;
+			margin-left: 12%;
+		}
+	}
+
+	@media (max-width: 375px) {
+		.values {
+			width: 450px;
+			margin-left: 10%;
+		}
+	}
+
+	@media (max-width: 320px) {
+		.values {
+			width: 420px;
+			margin-left: 10%;
+		}
+	}
+</style>

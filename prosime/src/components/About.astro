@@ -3,14 +3,14 @@
 		<div class="about-grid grid">
 			<div class="about-content fade-in">
 				<div class="section-label">Identidad Corporativa</div>
-				<h2 class="section-title">Ingeniería que <br /><span class="gradient-text">Impulsa el Mañana</span></h2>
+				<h2 class="section-title">Compromiso <br /><span class="gradient-text">con la Excelencia</span></h2>
 				
 				<div class="about-text">
 					<p>
-						En <strong>Prosime Industrial</strong>, convertimos desafíos técnicos en soluciones de alta ingeniería certificadas bajo los estándares internacionales más rigurosos.
+						Nuestro <strong>propósito</strong> es garantizar la integridad operativa y la eficiencia en la industria energética mediante soluciones de ingeniería y cumplimiento normativo de clase mundial. Tenemos la <strong>misión</strong> de transformar estos retos en soluciones reales de medición y control, integrando tecnología avanzada y expertos para asegurar el éxito operativo en México.
 					</p>
 					<p>
-						Nuestra excelencia operativa combina innovación constante con un cumplimiento estricto de la normativa <strong>ASME</strong>, garantizando seguridad y eficiencia en sectores clave de la energía.
+						Con una <strong>visión</strong> clara hacia el futuro, aspiramos a ser el referente líder en <strong>proyectos EPC</strong>, impulsando al sector con infraestructura propia, innovación constante y los más altos estándares globales de calidad y seguridad.
 					</p>
 				</div>
 
@@ -178,9 +178,18 @@
 		color: hsl(var(--text-muted));
 	}
 
-	/* --- Media Queries --- */
+	@media (max-width: 1440px) {
+		.about-text {
+			margin-left: 3%;
+		}
+		.section-title {
+			margin-left: 3%;
+		}
+		.section-label {
+			margin-left: 3%;
+		}
+	}
 
-	/* Tablets y Laptops Pequeñas */
 	@media (max-width: 1024px) {
 		.about-grid {
 			gap: 3rem;
@@ -188,9 +197,17 @@
 		.about {
 			padding: 6rem 1.5rem;
 		}
+		.about-text {
+			margin-left: 2%;
+		}
+		.section-title {
+			margin-left: 2%;
+		}
+		.section-label {
+			margin-left: 2%;
+		}
 	}
 
-	/* Tablets (Vertical) y Móviles Grandes */
 	@media (max-width: 992px) {
 		.about-grid {
 			grid-template-columns: 1fr; /* Columna única */
@@ -228,12 +245,24 @@
 			width: 350px;
 			margin-left:12%;
 		}
+		.stat-card {
+			margin-top: -10%;
+		}
+		.stats-row {
+			margin-bottom: -10%;
+		}
 	}	
 
 	@media (max-width: 375px)  {
 		.about {
 			width: 450px;
 			margin-left:10%;
+		}
+		.stat-card {
+			margin-top: -10%;
+		}
+		.stats-row {
+			margin-bottom: -10%;
 		}
 	}
 
@@ -242,6 +271,12 @@
 			width: 400px;
 			margin-left: 10%;
 		}
+		.stat-card {
+			margin-top: -10%;
+		}
+		.stats-row {
+			margin-bottom: -10%;
+		
 	}
 
 </style>

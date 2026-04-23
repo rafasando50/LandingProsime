@@ -1,0 +1,260 @@
+---
+const trainingTypes = [
+	{
+		id: "tecnica",
+		title: "Servicios",
+		description: "Servicios de Aplicación Calificada que incluyen:",
+		details: [
+			"Preparación de Superficie",
+			"Sand Blast",
+			"Aplicación de Primarios Ricos en Zinc",
+			"Acabado de Alto Desempeño"
+		],
+		image: "/servicios.jpg"
+	},
+	{
+		id: "academy",
+		title: "Capacitaciones",
+		description: "Corrodere Academy: Programa internacional de capacitación para aplicadores de recubrimientos industriales acreditado por Lloyd´s Register.",
+		image: "/capacitaciones.jpg"
+	}
+];
+---
+
+<section id="capacitaciones" class="capacitaciones">
+	<div class="container">
+		<div class="header fade-in">
+			<div class="section-label"> Servicios y Formación Profesional</div>
+			<h2 class="section-title">Servicios y <span class="gradient-text">Capacitaciones</span></h2>
+		</div>
+
+		<div class="training-grid">
+			{trainingTypes.map((type, index) => (
+				<div class={`training-card fade-in delay-${index}`}>
+					<div class="card-image">
+						<img src={type.image} alt={type.title} loading="lazy" />
+						<div class="card-overlay"></div>
+					</div>
+					<div class="card-content">
+						<h3 class="card-title">{type.title}</h3>
+						<p class="card-desc">{type.description}</p>
+						
+						{type.details && (
+							<ul class="detail-list">
+								{type.details.map(detail => (
+									<li>
+										<svg width="6" height="6" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="12"></circle></svg>
+										{detail}
+									</li>
+								))}
+							</ul>
+						)}
+
+						<a href="#contacto" class="btn-learn">
+							Consultar disponibilidad
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+						</a>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.capacitaciones {
+		padding: 10rem 2rem;
+		background-color: hsl(var(--bg-secondary));
+		position: relative;
+		overflow: hidden;
+	}
+
+	.container {
+		max-width: 1400px;
+		margin: 0 auto;
+	}
+
+	.header {
+		max-width: 800px;
+		margin-bottom: 5rem;
+	}
+
+	.section-label {
+		font-size: 0.85rem;
+		font-weight: 800;
+		text-transform: uppercase;
+		letter-spacing: 0.25rem;
+		color: hsl(var(--text-muted));
+		margin-bottom: 1.25rem;
+		display: block;
+	}
+
+	.section-title {
+		font-size: clamp(2.5rem, 5vw, 3.5rem);
+		letter-spacing: -0.02em;
+		line-height: 1.1;
+	}
+
+	.section-desc {
+		font-size: 1.15rem;
+		color: hsl(var(--text-muted));
+		margin-top: 1.5rem;
+		max-width: 650px;
+		line-height: 1.6;
+	}
+
+	.training-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 3rem;
+	}
+
+	.training-card {
+		background: #ffffff;
+		border-radius: 24px;
+		overflow: hidden;
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+		transition: var(--transition);
+		display: flex;
+		flex-direction: column;
+		border: 1px solid hsla(var(--navy-primary), 0.05);
+		cursor: pointer;
+	}
+
+	.training-card:hover {
+		transform: translateY(-10px);
+		box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+		border-color: hsla(var(--yellow-accent), 0.3);
+	}
+
+	.card-image {
+		height: 240px;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.card-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.6s ease;
+	}
+
+	.training-card:hover .card-image img {
+		transform: scale(1.1);
+	}
+
+	.card-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.5));
+	}
+
+	.card-content {
+		padding: 3rem;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.card-title {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		margin-top: -0.5rem;
+		color: hsl(var(--navy-primary));
+		letter-spacing: -0.02em;
+		font-family: 'Outfit', sans-serif;
+		font-weight: 700;
+	}
+
+	.card-desc {
+		font-size: 1.4rem;
+		color: hsl(var(--text-muted));
+		margin-bottom: 2rem;
+		line-height: 1.6;
+	}
+
+	.detail-list {
+		list-style: none;
+		padding: 0;
+		margin: -0.8rem 0 2.5rem 0;
+		flex: 1;
+	}
+
+	.detail-list li {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		font-size: 1.3rem;
+		color: hsl(var(--text-muted));
+		margin-bottom: 10px;
+		line-height: 1.7;
+		transition: var(--transition);
+		cursor: pointer;
+	}
+
+	.detail-list li:hover {
+		transform: translateX(8px);
+		color: hsl(var(--navy-primary));
+	}
+
+	.detail-list li svg {
+		color: hsl(var(--yellow-accent));
+		margin-top: 6px;
+		flex-shrink: 0;
+		transition: var(--transition);
+	}
+
+	.detail-list li:hover svg {
+		transform: scale(1.4);
+		filter: drop-shadow(0 0 5px hsla(var(--yellow-accent), 0.5));
+	}
+
+	.btn-learn {
+		margin-top: auto;
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 0.875rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: hsl(var(--navy-primary));
+		transition: var(--transition);
+		width: fit-content;
+		text-decoration: none;
+	}
+
+	.btn-learn:hover {
+		color: hsl(var(--yellow-accent));
+		transform: translateX(5px);
+	}
+
+	@media (max-width: 1024px) {
+		.training-grid {
+			grid-template-columns: 1fr;
+			max-width: 600px;
+			margin: 0 auto;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.capacitaciones {
+			padding: 6rem 1.5rem;
+		}
+		
+		.card-content {
+			padding: 2rem;
+		}
+
+		.card-image {
+			height: 200px;
+		}
+	}
+
+	.delay-0 { animation-delay: 0.1s; }
+	.delay-1 { animation-delay: 0.3s; }
+</style>

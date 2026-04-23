@@ -10,6 +10,7 @@
 			<li><a href="#inicio" class="nav-link">Inicio</a></li>
 			<li><a href="#nosotros" class="nav-link">Nosotros</a></li>
 			<li><a href="#productos" class="nav-link">Productos</a></li>
+			<li><a href="#capacitaciones" class="nav-link">Servicios</a></li>
 			<li><a href="#servicios" class="nav-link">Soluciones</a></li>
 			<li><a href="#contacto" class="btn btn-primary nav-btn">Contacto</a></li>
 		</ul>
@@ -109,6 +110,11 @@
 	}
 
 	@media (max-width: 992px) {
+		.nav-container {
+			width: 100% !important;
+			padding: 0 1rem;
+		}
+
 		.mobile-toggle {
 			display: flex;
 		}
@@ -117,7 +123,8 @@
 		.nav-links {
 			position: fixed;
 			top: 0;
-			right: -100%; /* Oculto fuera de pantalla */
+			right: 0;
+			transform: translateX(100%); /* Totalmente fuera a la derecha */
 			height: 100vh;
 			width: 280px;
 			background: hsl(var(--navy-primary));
@@ -126,10 +133,11 @@
 			padding: 2rem;
 			transition: 0.4s ease-in-out;
 			box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+			z-index: 1000;
 		}
 
 		.nav-links.active {
-			right: 0; /* Entra el menú */
+			transform: translateX(0); /* Entra el menú */
 		}
 
 		.brand-logo {
@@ -146,6 +154,42 @@
 	}
 	.mobile-toggle.active span:nth-child(3) {
 		transform: translateY(-9px) rotate(-45deg);
+	}
+
+	@media (max-width: 375px) {
+		.nav-container {
+			justify-content: center;
+			position: relative;
+			width: 100% !important;
+			padding: 0 1rem !important; /* Ensure padding exists */
+		}
+
+		.mobile-toggle {
+			position: absolute;
+			right: 20px; /* Nudged more towards center */
+		}
+
+		.brand-logo {
+			height: 42px; /* Slightly smaller for better fit */
+		}
+	}
+
+	@media (max-width: 320px) {
+		.nav-container {
+			justify-content: center;
+			position: relative;
+			width: 100% !important;
+			padding: 0 1rem !important; /* Ensure padding exists */
+		}
+
+		.mobile-toggle {
+			position: absolute;
+			right: 20px; /* Nudged more towards center */
+		}
+
+		.brand-logo {
+			height: 42px; /* Slightly smaller for better fit */
+		}
 	}
 </style>
 

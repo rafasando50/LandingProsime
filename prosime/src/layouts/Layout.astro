@@ -20,6 +20,11 @@
 </html>
 
 <style is:global>
+	*, *::before, *::after {
+		box-sizing: border-box;
+		min-width: 0;
+	}
+
 	:root {
 		/* Light Theme Palette (HSL / Hex) */
 		--bg-primary: 0 0% 100%;    /* Pure White */
@@ -43,6 +48,8 @@
 	}
 
 	html {
+		width: 100%;
+		overflow-x: hidden;
 		scroll-behavior: smooth;
 		background-color: hsl(var(--bg-primary));
 	}
@@ -50,10 +57,12 @@
 	body {
 		margin: 0;
 		padding: 0;
+		width: 100%;
+		min-height: 100vh;
+		overflow-x: hidden;
 		color: hsl(var(--text-main));
 		font-family: 'Inter', system-ui, sans-serif;
 		line-height: 1.6;
-		overflow-x: hidden;
 		-webkit-font-smoothing: antialiased;
 		background-color: hsl(var(--bg-primary));
 	}
@@ -155,4 +164,5 @@
 		background: hsl(var(--yellow-accent));
 		color: #ffffff;
 	}
+
 </style>
